@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Main Page</h1>
+<ul>
+	<li><a href="emp.yong">Employee Management Program(MVC Pattern)</a></li>
+	<li><a href="bbsList.yong">BBS Program(MVC Pattern)</a></li>
+</ul>
+</body>
+</html>

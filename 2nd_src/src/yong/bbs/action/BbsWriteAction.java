@@ -27,7 +27,7 @@ public class BbsWriteAction implements CommandHandler {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		int result=bdao.Bbswrite(bdto);
+		int result=bdao.bbsWrite(bdto);
 		String msg=result>0?"게시글 작성 성공":"게시글 작성 실패";
 		req.setAttribute("msg", msg);
 		return "/jsp_bbs/bbsMsg.jsp";

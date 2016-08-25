@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,18 +12,38 @@
 <table border="1" width="450" cellspacing="0">
 	<thead>
 		<tr>
-			<td>순번</td>
-			<td>제목</td>
-			<td>작성자</td>
-			<td>조회수</td>
+			<th>순번</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>조회수</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
-			<td colspan="3" align="center">페이징이 들어갈 영역</td>
+			<td colspan="3" align="center">
+			${requestScope.pageStr}
+			</td>
+			<td>
+			<a href="bbsWriteForm.yong">글쓰기</a>
+			</td>
 		</tr>
-			<td><a href="bbsWriteForm.yong">글쓰기</a></td>
 	</tfoot>
+	<tbody>
+		<c:set var="dtos" value="${requestScope.lists}"/>
+		<c:if test="${empty dtos}">
+			<tr>
+				<td colspan="4" align="center">등록된 글이 없습니다.</td>
+			</tr>
+		</c:if>
+		<c:forEach var="dto" items="${dtos}">
+		<tr>
+			<td>${dto.idx}</td>
+			<td>${dto.writer}</td>
+			<td>${dto.subject}</td>
+			<td>${dto.readnum}</td>
+		</tr>
+		</c:forEach>
+	</tbody>
 </table>
 </body>
 </html>
